@@ -1,4 +1,4 @@
-@extends('\layouts.main')
+@extends('./layouts.main')
 @push('head')
 <title>Update Todo</title>
 @endpush
