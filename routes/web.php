@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\todosController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,14 @@ use App\Http\Controllers\todosController;
 
 //homepage todo route
 Route::get('/',[todosController::class, 'index'])->name("todo.home");
+
+Route::get('/register', [UserController::class, 'showRegistrationForm']);
+Route::post('/register', [UserController::class, 'register'])->name('register');
+ 
+Route::get('/login', [UserController::class, 'showLoginForm']);
+Route::post('/login', [UserController::class, 'login'])->name('login');
+
+
 
 //create todo route
 Route::get('/create', function () {
